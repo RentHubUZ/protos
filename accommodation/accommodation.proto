@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+option go_package = "genproto/accommodation";
+
+package accommodation;
+
+service AccommodationService {
+    rpc CreateHouse(CreateHouseReq) returns (CreateHouseRes);
+    rpc UpdateHouse(UpdateHouseReq) returns (UpdateHouseRes);
+    rpc GetAllHouse(GetallHouseReq) returns (GetAllHouseRes);
+    rpc GetByIdHouse(GetByIdHouseReq) returns (GetByIdHouseRes);
+    rpc DeleteHouse(DeleteHouseReq) returns (DeleteHouseRes);
+}
+
+message CreateHouseReq {
+    string owner_id = 1;
+    string title = 2;
+    string description = 3;
+    float latitude = 4;
+    float longitude = 5;
+    int32 total_square_area = 6;
+    float price_per_month = 7;
+    int32 bedrooms = 8;
+    int32 bathrooms = 9;
+    string created_at = 10;
+    string updated_at = 11;
+    string images_url = 12;
+}
+
+message CreateHouseRes {
+    string owner_id = 1;
+    string title = 2;
+    string description = 3;
+    float latitude = 4;
+    float longitude = 5;
+    int32 total_square_area = 6;
+    float price_per_month = 7;
+    int32 bedrooms = 8;
+    int32 bathrooms = 9;
+    string created_at = 10;
+    string updated_at = 11;
+    string images_url = 12;
+}
+
+message UpdateHouseReq {
+    string owner_id = 1;
+    string title = 2;
+    string description = 3;
+    float latitude = 4;
+    float longitude = 5;
+    int32 total_square_area = 6;
+    float price_per_month = 7;
+    int32 bedrooms = 8;
+    int32 bathrooms = 9;
+    string created_at = 10;
+    string updated_at = 11;
+    string images_url = 12;
+}
+
+message UpdateHouseRes {
+    string message = 1;
+}
+
+message GetallHouseReq {
+    int32 limit = 1;
+    int32 page = 2;
+}
+
+message GetAllHouseRes {
+    string id = 1;
+    string owner_id = 2;
+    string title = 3;
+    string description = 4;
+    float latitude = 5;
+    float longitude = 6;
+    int32 total_square_area = 7;
+    float price_per_month = 8;
+    int32 bedrooms = 9;
+    int32 bathrooms = 10;
+    string created_at = 11;
+    string updated_at = 12;
+    string images_url = 13;
+}
+
+message GetByIdHouseReq {
+    string id = 1;
+}
+
+message GetByIdHouseRes {
+    string id = 1;
+    string owner_id = 2;
+    string title = 3;
+    string description = 4;
+    float latitude = 5;
+    float longitude = 6;
+    int32 total_square_area = 7;
+    float price_per_month = 8;
+    int32 bedrooms = 9;
+    int32 bathrooms = 10;
+    string created_at = 11;
+    string updated_at = 12;
+    string images_url = 13;
+}
+
+message DeleteHouseReq {
+    string id = 1;
+}
+
+message DeleteHouseRes {
+    string message = 1;
+}
