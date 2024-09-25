@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+option go_package = "genproto/tariff";
+
+package tariff;
+
+service TariffService {
+    rpc Get(GetTariffReq) returns (GetTariffRes);
+    rpc GetAll(GetAllTariffReq) returns (GetAllTariffRes);
+    rpc Create(CreateTariffReq) returns (CreateTariffRes);
+    rpc Update(UpdateTariffReq) returns (UpdateTariffRes);
+    rpc Delete(DeleteTariffReq) returns (DeleteTariffRes);
+}
+
+message GetTariffReq {
+    string id = 1;  // Tarif ID
+}
+
+message GetTariffRes {
+    Tariff tariff = 1;
+}
+
+message GetAllTariffReq {
+    int32 page = 1;
+    int32 limit = 2;
+}
+
+message GetAllTariffRes {
+    repeated Tariff tariffs = 1;
+}
+
+message CreateTariffReq {
+    string name = 1;
+    int32 days = 2;
+    float price = 3;
+    string offers = 4;
+}
+
+message CreateTariffRes {
+    string id = 1;
+}
+
+message UpdateTariffReq {
+    string id = 1;
+    string name = 2;
+    int32 days = 3;
+    float price = 4;
+    string offers = 5;
+}
+
+message UpdateTariffRes {
+    bool success = 1;
+}
+
+message DeleteTariffReq {
+    string id = 1;
+}
+
+message DeleteTariffRes {
+    bool success = 1;
+}
+
+message Tariff {
+    string id = 1;
+    string name = 2;
+    int32 days = 3;
+    float price = 4;
+    string offers = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
