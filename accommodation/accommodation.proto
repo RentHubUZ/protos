@@ -27,11 +27,8 @@ message CreateHouseReq {
     int32 lease_duration = 12;
     bool top_status = 13;
     repeated string image_url = 14;
-    string created_at = 15;
-    string updated_at = 16;
-    string deleted_at = 17;
-    float latitude = 18; 
-    float longitude = 19;
+    float latitude = 15; 
+    float longitude = 16;
 }
 
 message CreateHouseRes {
@@ -52,9 +49,8 @@ message CreateHouseRes {
     repeated string image_url = 15;
     string created_at = 16;
     string updated_at = 17;
-    string deleted_at = 18;
-    float latitude = 19; 
-    float longitude = 20;
+    float latitude = 18; 
+    float longitude = 19;
 }
 
 message UpdateHouseReq {
@@ -75,9 +71,8 @@ message UpdateHouseReq {
     repeated string image_url = 15;
     string created_at = 16;
     string updated_at = 17;
-    string deleted_at = 18;
-    float latitude = 19; 
-    float longitude = 20;
+    float latitude = 18; 
+    float longitude = 19;
 }
 
 message UpdateHouseRes {
@@ -107,9 +102,8 @@ message GetAllHouseRes {
     repeated string image_url = 15;
     string created_at = 16;
     string updated_at = 17;
-    string deleted_at = 18;
-    float latitude = 19; 
-    float longitude = 20;
+    float latitude = 18; 
+    float longitude = 19;
 }
 
 message GetByIdHouseReq {
@@ -134,9 +128,8 @@ message GetByIdHouseRes {
     repeated string image_url = 15;
     string created_at = 16;
     string updated_at = 17;
-    string deleted_at = 18;
-    float latitude = 19; 
-    float longitude = 20;
+    float latitude = 18; 
+    float longitude = 19;
 }
 
 message DeleteHouseReq {
