@@ -14,48 +14,70 @@ service AccommodationService {
 
 message CreateHouseReq {
     string owner_id = 1;
-    string title = 2;
-    string description = 3;
-    float latitude = 4;
-    float longitude = 5;
-    int32 total_square_area = 6;
-    float price_per_month = 7;
-    int32 bedrooms = 8;
-    int32 bathrooms = 9;
-    string created_at = 10;
-    string updated_at = 11;
-    string images_url = 12;
+    string address = 2;
+    float price = 3;
+    string property_type = 4;
+    int32 bedrooms = 5;
+    int32 bathrooms = 6;
+    float square_footage = 7;
+    string listing_status = 8;
+    string description = 9;
+    int32 roommate_count = 10;
+    string lease_terms = 11;
+    int32 lease_duration = 12;
+    bool top_status = 13;
+    repeated string image_url = 14;
+    string created_at = 15;
+    string updated_at = 16;
+    string deleted_at = 17;
+    float latitude = 18; 
+    float longitude = 19;
 }
 
 message CreateHouseRes {
-    string owner_id = 1;
-    string title = 2;
-    string description = 3;
-    float latitude = 4;
-    float longitude = 5;
-    int32 total_square_area = 6;
-    float price_per_month = 7;
-    int32 bedrooms = 8;
-    int32 bathrooms = 9;
-    string created_at = 10;
-    string updated_at = 11;
-    string images_url = 12;
-    string id = 13;
+    string id = 1;
+    string owner_id = 2;
+    string address = 3;
+    float price = 4;
+    string property_type = 5;
+    int32 bedrooms = 6;
+    int32 bathrooms = 7;
+    float square_footage = 8;
+    string listing_status = 9;
+    string description = 10;
+    int32 roommate_count = 11;
+    string lease_terms = 12;
+    int32 lease_duration = 13;
+    bool top_status = 14;
+    repeated string image_url = 15;
+    string created_at = 16;
+    string updated_at = 17;
+    string deleted_at = 18;
+    float latitude = 19; 
+    float longitude = 20;
 }
 
 message UpdateHouseReq {
-    string owner_id = 1;
-    string title = 2;
-    string description = 3;
-    float latitude = 4;
-    float longitude = 5;
-    int32 total_square_area = 6;
-    float price_per_month = 7;
-    int32 bedrooms = 8;
-    int32 bathrooms = 9;
-    string created_at = 10;
-    string updated_at = 11;
-    string images_url = 12;
+    string id = 1;
+    string owner_id = 2;
+    string address = 3;
+    float price = 4;
+    string property_type = 5;
+    int32 bedrooms = 6;
+    int32 bathrooms = 7;
+    float square_footage = 8;
+    string listing_status = 9;
+    string description = 10;
+    int32 roommate_count = 11;
+    string lease_terms = 12;
+    int32 lease_duration = 13;
+    bool top_status = 14;
+    repeated string image_url = 15;
+    string created_at = 16;
+    string updated_at = 17;
+    string deleted_at = 18;
+    float latitude = 19; 
+    float longitude = 20;
 }
 
 message UpdateHouseRes {
@@ -70,17 +92,24 @@ message GetallHouseReq {
 message GetAllHouseRes {
     string id = 1;
     string owner_id = 2;
-    string title = 3;
-    string description = 4;
-    float latitude = 5;
-    float longitude = 6;
-    int32 total_square_area = 7;
-    float price_per_month = 8;
-    int32 bedrooms = 9;
-    int32 bathrooms = 10;
-    string created_at = 11;
-    string updated_at = 12;
-    string images_url = 13;
+    string address = 3;
+    float price = 4;
+    string property_type = 5;
+    int32 bedrooms = 6;
+    int32 bathrooms = 7;
+    float square_footage = 8;
+    string listing_status = 9;
+    string description = 10;
+    int32 roommate_count = 11;
+    string lease_terms = 12;
+    int32 lease_duration = 13;
+    bool top_status = 14;
+    repeated string image_url = 15;
+    string created_at = 16;
+    string updated_at = 17;
+    string deleted_at = 18;
+    float latitude = 19; 
+    float longitude = 20;
 }
 
 message GetByIdHouseReq {
@@ -90,17 +119,24 @@ message GetByIdHouseReq {
 message GetByIdHouseRes {
     string id = 1;
     string owner_id = 2;
-    string title = 3;
-    string description = 4;
-    float latitude = 5;
-    float longitude = 6;
-    int32 total_square_area = 7;
-    float price_per_month = 8;
-    int32 bedrooms = 9;
-    int32 bathrooms = 10;
-    string created_at = 11;
-    string updated_at = 12;
-    string images_url = 13;
+    string address = 3;
+    float price = 4;
+    string property_type = 5;
+    int32 bedrooms = 6;
+    int32 bathrooms = 7;
+    float square_footage = 8;
+    string listing_status = 9;
+    string description = 10;
+    int32 roommate_count = 11;
+    string lease_terms = 12;
+    int32 lease_duration = 13;
+    bool top_status = 14;
+    repeated string image_url = 15;
+    string created_at = 16;
+    string updated_at = 17;
+    string deleted_at = 18;
+    float latitude = 19; 
+    float longitude = 20;
 }
 
 message DeleteHouseReq {
