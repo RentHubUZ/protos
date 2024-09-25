@@ -40,6 +40,7 @@ message CreateHouseRes {
     string created_at = 10;
     string updated_at = 11;
     string images_url = 12;
+    string id = 13;
 }
 
 message UpdateHouseReq {
