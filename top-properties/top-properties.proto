@@ -4,12 +4,6 @@ option go_package = "genproto/top-properties";
 
 package  top_properties;
 
-syntax = "proto3";
-
-option go_package = "genproto/top-properties";
-
-package top_properties;
-
 service TopPropertiesService {
     rpc Get(GetTopPropertyReq) returns (GetTopPropertyRes);
     rpc GetAll(GetAllTopPropertyReq) returns (GetAllTopPropertyRes);
@@ -38,8 +32,8 @@ message GetAllTopPropertyRes {
 message CreateTopPropertyReq {
     string property_id = 1;
     string user_id = 2;
-    string start_date = 3;  // Use string to represent DATE
-    string end_date = 4;    // Use string to represent DATE
+    string start_date = 3; 
+    string end_date = 4;   
     string tariff_name = 5;
 }
 
