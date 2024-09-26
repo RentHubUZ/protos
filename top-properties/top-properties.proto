@@ -32,9 +32,7 @@ message GetAllTopPropertyRes {
 message CreateTopPropertyReq {
     string property_id = 1;
     string user_id = 2;
-    string start_date = 3; 
-    string end_date = 4;   
-    string tariff_name = 5;
+    string tariff_name = 3;
 }
 
 message CreateTopPropertyRes {
