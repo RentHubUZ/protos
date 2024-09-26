@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+option go_package = "genproto/top-properties";
+
+package  top_properties;
+
+service TopPropertiesService {
+    rpc Get(GetTopPropertyReq) returns (GetTopPropertyRes);
+    rpc GetAll(GetAllTopPropertyReq) returns (GetAllTopPropertyRes);
+    rpc Create(CreateTopPropertyReq) returns (CreateTopPropertyRes);
+    rpc Update(UpdateTopPropertyReq) returns (UpdateTopPropertyRes);
+    rpc Delete(DeleteTopPropertyReq) returns (DeleteTopPropertyRes);
+}
+
+message GetTopPropertyReq {
+    string id = 1; // Top property ID
+}
+
+message GetTopPropertyRes {
+    TopProperty top_property = 1;
+}
+
+message GetAllTopPropertyReq {
+    int32 page = 1;
+    int32 limit = 2;
+}
+
+message GetAllTopPropertyRes {
+    repeated TopProperty top_properties = 1;
+}
+
+message CreateTopPropertyReq {
+    string property_id = 1;
+    string user_id = 2;
+    string start_date = 3; 
+    string end_date = 4;   
+    string tariff_name = 5;
+}
+
+message CreateTopPropertyRes {
+    string id = 1; // Top property ID
+}
+
+message UpdateTopPropertyReq {
+    string id = 1;
+    string property_id = 2;
+    string user_id = 3;
+    string start_date = 4;
+    string end_date = 5;
+    string tariff_name = 6;
+}
+
+message UpdateTopPropertyRes {
+    bool success = 1;
+}
+
+message DeleteTopPropertyReq {
+    string id = 1; 
+}
+
+message DeleteTopPropertyRes {
+    bool success = 1;
+}
+
+message TopProperty {
+    string id = 1;
+    string property_id = 2;
+    string user_id = 3;
+    string start_date = 4;
+    string end_date = 5;
+    string tariff_name = 6;
+    string created_at = 7;
+}
