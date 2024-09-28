@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+option go_package = "genproto/payment";
+
+package payment;
+
+service PaymentService {
+    rpc Get(GetPaymentReq) returns (GetPaymentRes);
+    rpc GetAll(GetAllPaymentReq) returns (GetAllPaymentRes);
+    rpc Create(CreatePaymentReq) returns (CreatePaymentRes);
+    rpc Delete(DeletePaymentReq) returns (DeletePaymentRes);
+}
+
+message GetPaymentReq {
+    string id = 1; // Payment ID
+}
+
+message GetPaymentRes {
+    Payment payment = 1;
+}
+
+message GetAllPaymentReq {
+    int32 page = 1;
+    int32 limit = 2;
+}
+
+message GetAllPaymentRes {
+    repeated Payment payments = 1;
+}
+
+message CreatePaymentReq {
+    string amount = 1; // Decimal as a string to avoid precision loss
+    string status = 2; // 'pending', 'completed', etc.
+    string transaction_date = 3; // Optional
+}
+
+message CreatePaymentRes {
+    string id = 1; // Payment ID
+}
+
+message DeletePaymentReq {
+    string id = 1;
+}
+
+message DeletePaymentRes {
+    bool success = 1;
+}
+
+message Payment {
+    string id = 1;
+    string amount = 2; // Decimal as a string
+    string status = 3; // 'pending', 'completed', etc.
+    string transaction_date = 4;
+}
