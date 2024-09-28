@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+option go_package = "genproto/reviews";
+
+package reviews;
+
+service Reviews {
+    rpc CreateReview(CreateReviewReq) returns (CreateReviewRes);
+    rpc GetAllReview(GetAllReviewReq) returns (GetAllReviewRes);
+    rpc GetByIdReview(GetByIdReviewReq) returns (GetByIdReviewRes);
+    rpc DeleteReview(DeleteReviewReq) returns (DeleteReviewRes);
+}
+
+message CreateReviewReq {
+    string user_id = 1;
+    string property_id = 2;
+    int32 rating = 3;
+    string comment = 4;
+}
+
+message CreateReviewRes {
+    string id = 1;
+    string user_id = 2;
+    string property_id = 3;
+    int32 rating = 4;
+    string comment = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+message GetAllReviewReq {
+    int32 limit = 1;
+    int32 page = 2;
+}
+
+message Review {
+    string id = 1;
+    string user_id = 2;
+    string property_id = 3;
+    int32 rating = 4;
+    string comment = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+message GetAllReviewRes {
+    repeated Review review = 1;
+}
+
+message GetByIdReviewReq {
+    string id = 1;
+}
+
+message GetByIdReviewRes {
+    string id = 1;
+    string user_id = 2;
+    string property_id = 3;
+    int32 rating = 4;
+    string comment = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+message DeleteReviewReq {
+    string id = 1;
+}
+
+message DeleteReviewRes {
+    string message = 1;
+}
