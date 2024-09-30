@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option go_package = "genproto/favorites";
+
+package favorites;
+
+service Favorites {
+    rpc CreateFavorites (CreateFavoritesReq) returns (CreateFavoritesRes);
+    rpc GetAllFavorites (GetAllFavoritesReq) returns (GetAllFavoritesRes);
+    rpc GetByIdFavorites (GetByIdFavoritesReq) returns (GetByIdFavoritesRes);
+    rpc DeleteFavorites (DeleteFavoritesReq) returns (DeleteFavoritesRes);
+}
+
+message CreateFavoritesReq {
+    string user_id = 1;
+    string property_id = 2;
+}
+
+message CreateFavoritesRes {
+    string id = 1;
+    string user_id = 2;
+    string property_id = 3;
+    string created_at = 4;
+}
+
+message GetAllFavoritesReq {
+    int32 limit = 1;
+    int32 page = 2;
+}
+
+message Favorite {
+    string id = 1;
+    string user_id = 2;
+    string property_id = 3;
+    string created_at = 4;
+}
+
+message GetAllFavoritesRes {
+    repeated Favorite favorites = 1;
+}
+
+message GetByIdFavoritesReq {
+    string id = 1;
+}
+
+message GetByIdFavoritesRes {
+    string id = 1;
+    string user_id = 2;
+    string property_id = 3;
+    string created_at = 4;
+}
+
+message DeleteFavoritesReq {
+    string id = 1;
+}
+
+message DeleteFavoritesRes {
+    string message = 1;
+}
