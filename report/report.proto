@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option go_package = "genproto/report";
+
+package report;
+
+service ReportService {
+  rpc Create (CreateReportRequest) returns (CreateReportResponse);
+  rpc Get    (GetReportRequest)    returns (GetReportResponse);
+}
+
+message Report {
+  string id = 1;
+  string property_id = 2;
+  string user_id = 3;
+  string email = 4;
+  string problem = 5;
+  string description = 6;
+  string created_at = 7;
+}
+
+message CreateReportRequest {
+  string property_id = 1;
+  string user_id = 2;
+  string email = 3;
+  string problem = 4;
+  string description = 5;
+}
+
+message CreateReportResponse {
+  Report report = 1;
+}
+
+message GetReportRequest {
+  string id = 1;
+}
+
+message GetReportResponse {
+  Report report = 1;
+}

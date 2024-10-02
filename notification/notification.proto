@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option go_package = "genproto/notification";
+
+package notification;
+
+// NotificationService interfeysi
+service NotificationService {
+  rpc Create (CreateNotificationRequest) returns (CreateNotificationResponse);
+  rpc Get (GetNotificationRequest) returns (GetNotificationResponse);
+}
+
+// Notification ma'lumotlari uchun message
+message Notification {
+  string id = 1;
+  string user_id = 2;
+  string content = 3;
+  bool is_read = 4;
+  string created_at = 5;
+}
+
+// CreateNotification uchun so'rov message
+message CreateNotificationRequest {
+  string user_id = 1;
+  string content = 2;
+  bool is_read = 3;
+}
+
+// CreateNotification uchun javob message
+message CreateNotificationResponse {
+  Notification notification = 1;
+}
+
+// GetNotification uchun so'rov message
+message GetNotificationRequest {
+  string id = 1;
+}
+
+// GetNotification uchun javob message
+message GetNotificationResponse {
+  Notification notification = 1;
+}

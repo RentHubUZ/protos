@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option go_package = "genproto/request";
+
+package request;
+
+service RequestService {
+  rpc CreateRequest (CreateRequestRequest) returns (CreateRequestResponse);
+  rpc GetRequest (GetRequestRequest) returns (GetRequestResponse);
+}
+
+message Request {
+  string id = 1;
+  string user_id = 2;
+  repeated string email = 3; // email array
+  int32 roommate_count = 4;
+  string phone_number = 5;
+}
+
+message CreateRequestRequest {
+  string user_id = 1;
+  repeated string email = 2;
+  int32 roommate_count = 3;
+  string phone_number = 4;
+}
+
+message CreateRequestResponse {
+  Request request = 1;
+}
+
+message GetRequestRequest {
+  string id = 1;
+}
+
+message GetRequestResponse {
+  Request request = 1;
+}
