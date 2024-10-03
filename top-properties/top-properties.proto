@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "genproto/top-properties";
+option go_package = "genproto/top_properties";
 
 package  top_properties;
 
