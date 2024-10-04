@@ -31,7 +31,7 @@ message GetAllPaymentRes {
 message CreatePaymentReq {
     string amount = 1; // Decimal as a string to avoid precision loss
     string status = 2; // 'pending', 'completed', etc.
-    string transaction_date = 3; // Optional
+    // string transaction_date = 3; // Optional
 }
 
 message CreatePaymentRes {
