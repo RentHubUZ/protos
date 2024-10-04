@@ -7,6 +7,7 @@ package report;
 service ReportService {
   rpc Create (CreateReportRequest) returns (CreateReportResponse);
   rpc Get    (GetReportRequest)    returns (GetReportResponse);
+  rpc Delete (DeleteReportRequest) returns (Void);
 }
 
 message Report {
@@ -38,3 +39,9 @@ message GetReportRequest {
 message GetReportResponse {
   Report report = 1;
 }
+
+message DeleteReportRequest {
+  string id = 1;
+}
+
+message Void {}
