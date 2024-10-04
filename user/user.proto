@@ -8,7 +8,7 @@ service User {
     rpc GetProfile (ID) returns (Profile);
     rpc UpdateProfile (NewData) returns (Void);
     rpc DeleteProfile (ID) returns (Void);
-    rpc UpdatePassword (NewPass) returns (Void);
+    rpc ChangePassword (NewPass) returns (Void);
     rpc ValidateUser (ID) returns (Status);
 }
 
@@ -37,7 +37,8 @@ message Status {
 
 message NewPass {
     string id = 1;
-    string password = 2;
+    string old_password = 2;
+    string new_password = 3;
 }
 
 message Void {}
